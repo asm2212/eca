@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wpay/screens/confirm_transfer_screen.dart';
 import 'package:wpay/utils/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -110,26 +111,37 @@ class _HomeScreenState extends State<HomeScreen> {
                       const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: Row(
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/images/transfer.png",
-                            width: 50,
-                            height: 50,
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            "Transfer",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Constants.white,
+                      GestureDetector(
+                        onTap: () {
+                          // Navigate to TransferScreen
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ConfirmTransferScreen(),
                             ),
-                          ),
-                        ],
+                          );
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/transfer.png",
+                              width: 50,
+                              height: 50,
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            Text(
+                              "Transfer",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Constants.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                      Spacer(),
                       Container(
