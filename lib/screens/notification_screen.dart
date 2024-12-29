@@ -35,11 +35,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     width: 50,
                     height: 55,
                     decoration: BoxDecoration(
-                      color: Constants.primaryText,
+                    
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
                         color: Constants.secondaryText,
-                        width: 2,                      ),
+                        width: 1,                      ),
                     ),
                     child: IconButton(
                       onPressed: () {},
@@ -67,11 +67,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
               width: 50,
               height: 55,
               decoration: BoxDecoration(
-                color: Constants.primaryText,
+            
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(
                   color: Constants.secondaryText,
-                  width: 2,
+                  width: 1,
                 ),
               ),
               child: IconButton(
