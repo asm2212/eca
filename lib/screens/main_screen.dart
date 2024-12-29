@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wpay/screens/blank_screen.dart';
 import 'package:wpay/screens/home_screen.dart';
 import 'package:wpay/screens/notification_screen.dart';
+import 'package:wpay/screens/scan_qr_code_screen.dart';
 import 'package:wpay/screens/static_screen.dart';
 import 'package:wpay/utils/constants.dart';
 
@@ -19,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const StaticScreen(),
-    const BlankScreen(),
+    const ScanQrCodeScreen(),
     const NotificationScreen(),
     const BlankScreen(),
   ];
