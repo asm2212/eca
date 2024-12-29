@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wpay/screens/home_screen.dart';
+import 'package:wpay/screens/summary_transaction_screen.dart';
 import 'package:wpay/utils/constants.dart';
 
 class ScanQrCodeScreen extends StatefulWidget {
@@ -10,8 +12,11 @@ class ScanQrCodeScreen extends StatefulWidget {
 
 class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
   @override
+ 
+
+  @override
   Widget build(BuildContext context) {
-     var media = MediaQuery.of(context).size;
+    var media = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -34,14 +39,17 @@ class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
                     width: 50,
                     height: 55,
                     decoration: BoxDecoration(
-                      color: Constants.primaryText,
+                
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
                         color: Constants.secondaryText,
-                        width: 2,                      ),
+                        width: 1,
+                      ),
                     ),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (builder) => const HomeScreen()));
+                      },
                       icon: const Icon(
                         Icons.arrow_back_ios,
                         size: 30,
@@ -50,67 +58,74 @@ class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
                     ),
                   ),
                 ),
-                
-        title:  Text(
-          'Scan to Pay',
-          style: TextStyle(
-            color: Constants.white,
-            fontSize: 26,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: Container(
-              width: 50,
-              height: 55,
-              decoration: BoxDecoration(
-                color: Constants.primaryText,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(
-                  color: Constants.secondaryText,
-                  width: 2,
+                title: Text(
+                  'Scan to Pay',
+                  style: TextStyle(
+                    color: Constants.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.question_mark_rounded,
-                  size: 30,
-                ),
-                color: Constants.white,
-              ),
-            ),
-          ),
-        ],
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: Container(
+                      width: 50,
+                      height: 55,
+                      decoration: BoxDecoration(
+                       
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(
+                          color: Constants.secondaryText,
+                          width: 1,
+                        ),
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.question_mark_rounded,
+                          size: 30,
+                        ),
+                        color: Constants.white,
+                      ),
+                    ),
+                  ),
+                ],
                 expandedHeight: media.width * 2.2,
-           flexibleSpace: FlexibleSpaceBar(
-  background: Stack(
-    children: [
-      Image.asset(
-        "assets/images/noti_back.png",
-        width: media.width,
-        height: media.width * 2.2,
-        fit: BoxFit.cover,
-      ),
-      Positioned(
-        left: media.width * 0.1,
-        right: media.width * 0.1,
-        top: media.height * 0.25,
-        child: Image.asset(
-          "assets/images/qrcode.png",
-          fit: BoxFit.contain,
-        ),
-      ),
-    ],
-  ),
-),
-
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Stack(
+                    children: [
+                      Image.asset(
+                        "assets/images/noti_back.png",
+                        width: media.width,
+                        height: media.width * 2.2,
+                        fit: BoxFit.cover,
+                      ),
+                      Positioned(
+                        left: media.width * 0.1,
+                        right: media.width * 0.1,
+                        top: media.height * 0.25,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SummaryTransactionScreen(),
+                              ),
+                            );
+                          },
+                          child: Image.asset(
+                            "assets/images/qrcode.png",
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ];
           },
-          
           body: Container(
             padding: EdgeInsets.symmetric(
               horizontal: media.width * 0.05,
@@ -124,9 +139,7 @@ class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
               ),
             ),
             child: SingleChildScrollView(
-
               child: Column(
-            
                 children: [
                   Container(
                     height: 4,
@@ -159,9 +172,6 @@ class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
                       ),
                     ],
                   )
-                
-                  
-                
                 ],
               ),
             ),
@@ -171,3 +181,4 @@ class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
     );
   }
 }
+
