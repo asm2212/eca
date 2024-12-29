@@ -16,6 +16,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   font_awesome_flutter: ^10.8.0
   curved_navigation_bar: ^1.0.6
+  flutter_steps: ^1.0.5
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wpay/screens/confirm_transfer_screen.dart';
+import 'package:wpay/screens/top_up_screen.dart';
 import 'package:wpay/utils/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-           SizedBox(
+            SizedBox(
               height: media.height * 0.02,
             ),
             Padding(
@@ -143,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                     Spacer(),
+                      Spacer(),
                       Container(
                         width: 1,
                         height: 60,
@@ -152,26 +153,36 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Spacer(),
-                         Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/images/top_up.png",
-                            width: 50,
-                            height: 50,
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            "Top Up",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Constants.white,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TopUpScreen(),
                             ),
-                          ),
-                        ],
+                          );
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/top_up.png",
+                              width: 50,
+                              height: 50,
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            Text(
+                              "Top Up",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Constants.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       Spacer(),
                       Container(
@@ -181,8 +192,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Constants.white,
                         ),
                       ),
-                       Spacer(),
-                         Column(
+                      Spacer(),
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
@@ -206,7 +217,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-          
               ),
             ),
             SizedBox(
@@ -265,7 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         Spacer(),
-                               Column(
+                        Column(
                           children: [
                             Container(
                               height: media.height * 0.075,
@@ -294,7 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         Spacer(),
-                               Column(
+                        Column(
                           children: [
                             Container(
                               height: media.height * 0.075,
@@ -323,7 +333,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         Spacer(),
-                               Column(
+                        Column(
                           children: [
                             Container(
                               height: media.height * 0.075,
@@ -351,14 +361,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        
                       ],
                     ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                    Padding(
+                  Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
                       children: [
@@ -391,7 +400,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         Spacer(),
-                               Column(
+                        Column(
                           children: [
                             Container(
                               height: media.height * 0.075,
@@ -420,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         Spacer(),
-                               Column(
+                        Column(
                           children: [
                             Container(
                               height: media.height * 0.075,
@@ -449,7 +458,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         Spacer(),
-                               Column(
+                        Column(
                           children: [
                             Container(
                               height: media.height * 0.075,
@@ -477,7 +486,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ],
                         ),
-                        
                       ],
                     ),
                   ),
@@ -500,7 +508,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Spacer(),
-                   Text(
+                  Text(
                     "See More",
                     style: TextStyle(
                       fontSize: 17,
@@ -511,47 +519,44 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-          const SizedBox(
-            height: 10,
-          ),
-      SizedBox(
-  height: media.height * 0.17,
-  width: media.width,
-  child: ListView.builder(
-    scrollDirection: Axis.horizontal,
-    itemCount: 5,
-    itemBuilder: (context, index) {
-      return Padding(
-        padding: EdgeInsets.only(
-          left: index == 0 ? 15.0 : 8.0,
-          right: index == 4 ? 15.0 : 8.0,
-        ),
-        child: Container(
-          height: media.height * 0.18,
-          width: media.width * 0.6,
-          decoration: BoxDecoration(
-            color: Constants.primary,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.asset(
-              index % 2 == 0
-                  ? "assets/images/promo1.png"
-                  : "assets/images/promo2.png",
-              width: media.width * 0.6,
-              height: media.height * 0.18,
-              fit: BoxFit.cover,
+            const SizedBox(
+              height: 10,
             ),
-          ),
-        ),
-      );
-    },
-  ),
-)
-
-            
-              
+            SizedBox(
+              height: media.height * 0.17,
+              width: media.width,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                      left: index == 0 ? 15.0 : 8.0,
+                      right: index == 4 ? 15.0 : 8.0,
+                    ),
+                    child: Container(
+                      height: media.height * 0.18,
+                      width: media.width * 0.6,
+                      decoration: BoxDecoration(
+                        color: Constants.primary,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          index % 2 == 0
+                              ? "assets/images/promo1.png"
+                              : "assets/images/promo2.png",
+                          width: media.width * 0.6,
+                          height: media.height * 0.18,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),
